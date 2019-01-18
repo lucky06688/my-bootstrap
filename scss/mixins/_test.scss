@@ -1,0 +1,6 @@
+@mixin test {
+  // test
+  & .test > .haha {
+    color: red;
+  }
+}

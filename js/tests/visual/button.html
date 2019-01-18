@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.css">
+    <title>Button</title>
+    <script src="../../../assets/js/vender/jquery-slim.min.js"></script>
+    <script src="../../dist/util.js"></script>
+    <script src="../../dist/button.js"></script>
+    <style>
+    .br {
+      height: .5rem;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="ez">
+        <h2 class="test"><span class="haha">hahahaha</span></h2>
+      </div>
+
+      <h1>Button <small>Bootstrap Visual Test</small></h1>
+      
+
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-secondary">Secondary</button>
+      <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-danger">Danger</button>
+      <button type="button" class="btn btn-warning">Warning</button>
+      <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-light">Light</button>
+      <button type="button" class="btn btn-dark">Dark</button>
+
+      <button type="button" class="btn btn-link">Link</button>
+
+      <div class="br"></div>
+
+      <button type="button" class="btn btn-outline-primary">Primary</button>
+      <button type="button" class="btn btn-outline-secondary">Secondary</button>
+      <button type="button" class="btn btn-outline-success">Success</button>
+      <button type="button" class="btn btn-outline-danger">Danger</button>
+      <button type="button" class="btn btn-outline-warning">Warning</button>
+      <button type="button" class="btn btn-outline-info">Info</button>
+      <button type="button" class="btn btn-outline-light">Light</button>
+      <button type="button" class="btn btn-outline-dark">Dark</button>
+
+      <div class="br"></div>
+
+      <input class="btn btn-primary btn-block" type="button" value="Input">
+      <input class="btn btn-primary btn-block" type="submit" value="Submit">
+      <input class="btn btn-primary btn-block" type="reset" value="Reset">
+
+      <div class="br"></div>
+      <button type="button" class="btn btn-primary btn-lg">Large button</button>
+      <button type="button" class="btn btn-secondary btn-lg">Large button</button>
+
+      <div class="br"></div>
+      <button type="button" class="btn btn-primary btn-sm">Small button</button>
+      <button type="button" class="btn btn-secondary btn-sm">Small button</button>    
+      
+      <div class="br"></div>
+      <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+      <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
+
+      <div class="br"></div>
+      <button type="button" class="btn btn-primary" data-toggle="buttons" aria-pressed="false" autocomplete="off">
+          Single toggle
+      </button>
+
+      <div class="br"></div>
+      <div class="btn-group-toggle" data-toggle="buttons">
+          <button type="button" class="btn btn-primary btn-sm">Small toggle</button>
+          <button type="button" class="btn btn-secondary btn-sm">Small toggle</button>    
+      </div>
+
+      <div class="br"></div>
+      <div class="btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary active">
+            <input type="checkbox" checked autocomplete="off"> Checked
+          </label>
+      </div>   
+
+      <div class="br"></div>
+      <a class="btn btn-primary" href="#" role="button">Link</a>
+      <button class="btn btn-primary" type="submit">Button</button>
+      <input class="btn btn-primary" type="button" value="Input">
+      <input class="btn btn-primary" type="submit" value="Submit">
+      <input class="btn btn-primary" type="reset" value="Reset">
+
+      <p>For checkboxes and radio buttons, ensure that keyboard behavior is functioning correctly.</p>
+      <p>Navigate to the checkboxes with the keyboard (generally, using <kbd>TAB</kbd> / <kbd>SHIFT + TAB</kbd>), and ensure that <kbd>SPACE</kbd> toggles the currently focused checkbox. Click on one of the checkboxes using the mouse, ensure that focus was correctly set on the actual checkbox, and that <kbd>SPACE</kbd> toggles the checkbox again.</p>
+
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="checkbox" checked autocomplete="off"> Checkbox 1 (pre-checked)
+        </label>
+        <label class="btn btn-secondary">
+          <input type="checkbox" autocomplete="off" id="checkbox" required> Checkbox 2
+        </label>
+        <label class="btn btn-secondary">
+          <input type="checkbox" autocomplete="off"> Checkbox 3
+        </label>
+      </div>
+
+      <p>Navigate to the radio button group with the keyboard (generally, using <kbd>TAB</kbd> / <kbd>SHIFT + TAB</kbd>). If no radio button was initially set to be selected, the first/last radio button should receive focus (depending on whether you navigated "forward" to the group with <kbd>TAB</kbd> or "backwards" using <kbd>SHIFT + TAB</kbd>). If a radio button was already selected, navigating with the keyboard should set focus to that particular radio button. Only one radio button in a group should receive focus at any given time.  Ensure that the selected radio button can be changed by using the <kbd>←</kbd> and <kbd>→</kbd> arrow keys. Click on one of the radio buttons with the mouse,  ensure that focus was correctly set on the actual radio button, and that <kbd>←</kbd> and <kbd>→</kbd> change the selected radio button again.</p>
+
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-primary active">
+          <input type="radio" name="options" id="option1" autocomplete="off" checked> Radio 1 (preselected)
+        </label>
+        <label class="btn btn-primary">
+          <input type="radio" name="options" id="option2" autocomplete="off"> Radio 2
+        </label>
+        <label class="btn btn-primary">
+          <input type="radio" name="options" id="option3" autocomplete="off"> Radio 3
+        </label>
+      </div>
+
+      <div>
+        <label style="display: inline-block; width: 50px;"><input type="checkbox" id="test"></label>
+              
+        <button id="button">change</button>
+      </div>
+    </div>
+    <script>
+      var input = document.querySelector('#test')
+      var button = document.querySelector('#button');
+      var flag = true;
+      button.addEventListener('click', function() {
+        input.checked = flag;
+        flag = !flag;
+      })
+    </script>
+  </body>
+</html>

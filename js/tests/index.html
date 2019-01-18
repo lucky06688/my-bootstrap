@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bootstrap Plugin Test Suite</title>
+
+    <!-- jQuery -->
+    <script>
+      (function () {
+        var path = "../../assets/js/vender/jquery-slim.min.js";
+        var jQueryVersion = location.search.match(/[?&]jquery=(.*?)(?=&|$)/);
+
+        if (jQueryVersion) {
+          path = 'https://code.jquery.com/jquery-' + jQueryVersion[1] + '.min.js';
+        }
+        document.write('<script src="' + path + '"<\/script>')
+      }())    
+    </script>
+    <script src="../../node_modules/popper.js/dist/umd/popper.js"></script>
+
+    <!-- QUnit -->
+    <link rel="stylesheet" href="../../node_modules/qunit/qunit/qunit.css" media="screen">
+    <script src="../../node_modules/qunit/qunit/qunit.js"></script>
+
+    <script>
+      // Disable jQuery event aliases to ensure we don't accidentally use any of them
+      [
+        'blur',
+        'focus',
+        'focusin',
+        'focusout',
+        'resize',
+        'scroll',
+        'click',
+        'dblclick',
+        'mousedown',
+        'mouseup',
+        'mousemove',
+        'mouseover',
+        'mouseout',
+        'mouseenter',
+        'mouseleave',
+        'change',
+        'select',
+        'submit',
+        'keydown',
+        'keypress',
+        'keyup',
+        'contextmenu'
+      ].forEach(function(eventAlias) {
+        $.fn[eventAlias] = function() {
+          throw new Error('Using the ".' + eventAlias + '()" method is not allowed, so that Bootstrap can be compatible with custom jQuery builds which exclude the "event aliases" module that defines said method. See https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md#js')
+        }
+      })
+
+      // Require assert.expect in each test
+      QUnit.config.requireExpects = true;
+
+            // Display fixture on-screen on iOS to avoid false positives
+      // See https://github.com/twbs/bootstrap/pull/15955
+      if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+        QUnit.begin(function() {
+          $('#qunit-fixture').css({ top: 0, left: 0 })
+        })
+
+        QUnit.done(function() {
+          $('#qunit-fixture').css({ top: '', left: '' })
+        })
+      }
+    </script>
+
+    <!-- Transpiled Plugins -->
+    <script src="../dist/util.js"></script>
+    <script src="../dist/alert.js"></script>
+
+    <!-- Unit Tests -->
+    <script src="unit/alert.js"></script>
+    <!-- <script src="unit/util.js"></script> -->
+    
+  </head>
+  <body>
+    <div id="qunit-container">
+      <div id="qunit"></div>
+      <div id="qunit-fixture"></div>
+    </div>
+  </body>
+  
+</html>

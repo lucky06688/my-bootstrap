@@ -1,0 +1,23 @@
+.close {
+  float: right;
+  font-size: $close-font-size;
+  font-weight: $close-font-weight;
+  line-height: 1;
+  color: $close-color;
+  text-shadow: $close-text-shadow;
+  opacity: .5;
+  @include hover-focus-active {
+    color: $close-color;
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+    opacity: .75;
+  }
+}
+
+button.close {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
